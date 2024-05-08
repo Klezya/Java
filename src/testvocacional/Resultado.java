@@ -92,6 +92,9 @@ public class Resultado extends javax.swing.JFrame {
         textores.setText("LOS RESULTADOS  DE SU TEST SON...");
         getContentPane().add(textores);
         textores.setBounds(0, 40, 410, 30);
+
+        setSize(new java.awt.Dimension(416, 308));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**

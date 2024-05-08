@@ -86,7 +86,8 @@ public class Preguntas extends javax.swing.JFrame {
                 .addGap(22, 22, 22))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(416, 308));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**

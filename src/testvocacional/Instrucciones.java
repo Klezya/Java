@@ -4,6 +4,8 @@
  */
 package testvocacional;
 
+import testvocacional.Preguntas;
+
 /**
  *
  * @author sweet
@@ -34,10 +36,19 @@ public class Instrucciones extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBounds(new java.awt.Rectangle(0, 0, 0, 0));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setMaximumSize(new java.awt.Dimension(1920, 1080));
+        setMinimumSize(new java.awt.Dimension(600, 400));
         getContentPane().setLayout(null);
 
         inicio.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         inicio.setText("Comenzar test");
+        inicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inicioActionPerformed(evt);
+            }
+        });
         getContentPane().add(inicio);
         inicio.setBounds(100, 240, 198, 27);
 
@@ -53,6 +64,7 @@ public class Instrucciones extends javax.swing.JFrame {
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
+        jTextArea1.setText("Instrucciones\n1. Lee atentamente cada una de las actividades. \n2. Marca con una “X” en las columnas “Me Interesa” o “No me interesa”  según tu propia decisión.  Recuerda:  Debes marcar la “X” \nen una sola de las columnas.  \n3. En general no existen respuestas correctas o incorrectas; lo importante es que contestes con sinceridad y confianza para que \npuedas conocer mejor tus intereses vocacionales");
         jScrollPane1.setViewportView(jTextArea1);
 
         getContentPane().add(jScrollPane1);
@@ -61,10 +73,17 @@ public class Instrucciones extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         jLabel1.setText("Una vez comenzado el test no podras regresar a esta ventana");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(40, 280, 350, 16);
+        jLabel1.setBounds(60, 280, 290, 16);
 
-        pack();
+        setSize(new java.awt.Dimension(426, 316));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void inicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioActionPerformed
+        this.dispose();
+        Preguntas hola = new Preguntas();
+        hola.setVisible(true);
+    }//GEN-LAST:event_inicioActionPerformed
 
     /**
      * @param args the command line arguments
