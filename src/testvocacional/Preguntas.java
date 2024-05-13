@@ -5,6 +5,7 @@
 package testvocacional;
 
 import javax.swing.ButtonModel;
+import testvocacional.Lector;
 
 /**
  *
@@ -119,12 +120,8 @@ public class Preguntas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void siguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siguienteActionPerformed
-        ButtonModel selectedButton = buttonGroup1.getSelection();
-        if (selectedButton != null) {
-            System.out.println("Botón seleccionado: " + selectedButton.getActionCommand());
-        } else {
-            System.out.println("Ningún botón seleccionado.");
-        }
+        int seleccion = Integer.parseInt(buttonGroup1.getSelection().getActionCommand()); //El valor de seleccion sera 0 si NO y 1 si SI
+        Lector.controladorResultados[0][Lector.numPregunta] = seleccion;
 
     }//GEN-LAST:event_siguienteActionPerformed
 
