@@ -29,6 +29,7 @@ public class test {
                 }
             }
             
+            //Manejamos el arreglo de las respuestas 
             int cantPreguntas = cantidadPreguntas(rutaArchivo);
             int[] controladorResultados = new int[cantPreguntas];
 
@@ -44,12 +45,8 @@ public class test {
                     // Divide la línea en elementos separados por comas
                     String[] elementos = linea.split(",");
                     
-                    
-
-                    // Imprime cada elemento
-                    for (String elemento : elementos) {
-                        System.out.print(elemento + " ");
-                    }
+                    // Imprime la pregunta
+                    System.out.print(elementos[1]);
                     System.out.println(); // Imprime una nueva línea después de cada línea del archivo
                 }
             }
