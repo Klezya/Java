@@ -17,7 +17,7 @@ public class TestVocacional {
      */
     public static void main(String[] args) {
         Lector lector = new Lector();
-        
+        new Instrucciones().setVisible(true);
 
     }    
 }

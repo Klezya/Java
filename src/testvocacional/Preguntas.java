@@ -51,6 +51,7 @@ public class Preguntas extends javax.swing.JFrame {
         pregunta.setEditable(false);
         pregunta.setColumns(20);
         pregunta.setRows(5);
+        pregunta.setText(Lector.preguntas[Lector.numPregunta]);
         pregunta.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         pregunta.setFocusable(false);
         jScrollPane1.setViewportView(pregunta);
@@ -71,7 +72,7 @@ public class Preguntas extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Pregunta 1");
+        jLabel1.setText("Pregunta " + Lector.numPregunta+1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -122,11 +123,13 @@ public class Preguntas extends javax.swing.JFrame {
     private void siguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siguienteActionPerformed
         int seleccion = Integer.parseInt(buttonGroup1.getSelection().getActionCommand()); //El valor de seleccion sera 0 si NO y 1 si SI
         Lector.controladorResultados[0][Lector.numPregunta] = seleccion;
-
+        Lector.numPregunta++;
+        refrescar();
     }//GEN-LAST:event_siguienteActionPerformed
 
     private void anteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anteriorActionPerformed
-        // TODO add your handling code here:
+        Lector.numPregunta--;
+        refrescar();
     }//GEN-LAST:event_anteriorActionPerformed
 
     /**
@@ -162,6 +165,10 @@ public class Preguntas extends javax.swing.JFrame {
                 new Preguntas().setVisible(true);
             }
         });
+    }
+
+    private void refrescar(){
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
