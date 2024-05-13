@@ -4,8 +4,9 @@
  */
 package testvocacional;
 
-import javax.swing.ButtonModel;
-import testvocacional.Lector;
+
+import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -32,13 +33,15 @@ public class Preguntas extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         no = new javax.swing.JRadioButton();
         si = new javax.swing.JRadioButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        pregunta = new javax.swing.JTextArea();
         anterior = new javax.swing.JButton();
         siguiente = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        enunciado = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(400, 360));
+        setResizable(false);
 
         buttonGroup1.add(no);
         no.setText("No me interesa");
@@ -47,14 +50,6 @@ public class Preguntas extends javax.swing.JFrame {
         buttonGroup1.add(si);
         si.setText("Me interesa");
         si.setActionCommand("1");
-
-        pregunta.setEditable(false);
-        pregunta.setColumns(20);
-        pregunta.setRows(5);
-        pregunta.setText(Lector.preguntas[Lector.numPregunta]);
-        pregunta.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        pregunta.setFocusable(false);
-        jScrollPane1.setViewportView(pregunta);
 
         anterior.setText("anterior");
         anterior.addActionListener(new java.awt.event.ActionListener() {
@@ -72,7 +67,18 @@ public class Preguntas extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Pregunta " + Lector.numPregunta+1);
+        jLabel1.setText("Pregunta 1");
+
+        enunciado.setEditable(false);
+        enunciado.setColumns(20);
+        enunciado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        enunciado.setLineWrap(true);
+        enunciado.setRows(5);
+        enunciado.setText(Lector.preguntas[Lector.numPregunta]);
+        enunciado.setWrapStyleWord(true);
+        enunciado.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        enunciado.setMargin(new java.awt.Insets(2, 10, 2, 6));
+        jScrollPane1.setViewportView(enunciado);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -80,12 +86,9 @@ public class Preguntas extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(45, 45, 45)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(no)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(si, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(no)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
+                .addComponent(si, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(55, 55, 55))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(25, 25, 25)
@@ -94,22 +97,27 @@ public class Preguntas extends javax.swing.JFrame {
                 .addComponent(siguiente)
                 .addGap(24, 24, 24))
             .addGroup(layout.createSequentialGroup()
-                .addGap(129, 129, 129)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(121, 121, 121)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addGap(22, 22, 22)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(no)
                     .addComponent(si))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(siguiente)
                     .addComponent(anterior))
@@ -121,15 +129,23 @@ public class Preguntas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void siguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siguienteActionPerformed
-        int seleccion = Integer.parseInt(buttonGroup1.getSelection().getActionCommand()); //El valor de seleccion sera 0 si NO y 1 si SI
-        Lector.controladorResultados[0][Lector.numPregunta] = seleccion;
-        Lector.numPregunta++;
-        refrescar();
+        if (buttonGroup1.getSelection() == null) {//si no selecciona opcion dar advertencia
+            JOptionPane.showMessageDialog(null,"Porfavor seleccionar una de las opciones antes de continuar", "Advertencia",JOptionPane.ERROR_MESSAGE);
+        } else {
+            int seleccion = Integer.parseInt(buttonGroup1.getSelection().getActionCommand()); //El valor de seleccion sera 0 si NO y 1 si SI
+            Lector.controladorResultados[0][Lector.numPregunta] = seleccion;
+            Lector.numPregunta++;
+            refrescar();
+        }
     }//GEN-LAST:event_siguienteActionPerformed
 
     private void anteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anteriorActionPerformed
-        Lector.numPregunta--;
-        refrescar();
+        if (Lector.numPregunta == 0) {
+            JOptionPane.showMessageDialog(null, "Estas en la primera pregunta, no puedes retroceder mas","Advertencia",JOptionPane.ERROR_MESSAGE);
+        } else {
+            Lector.numPregunta--;
+            refrescar();
+        }
     }//GEN-LAST:event_anteriorActionPerformed
 
     /**
@@ -168,16 +184,20 @@ public class Preguntas extends javax.swing.JFrame {
     }
 
     private void refrescar(){
-
+        this.enunciado.setText(Lector.preguntas[Lector.numPregunta]);
+        this.enunciado.setLineWrap(true);
+        int num = Lector.numPregunta + 1; //esto es simplemente porque si los sumo se suman como String a pesar de ser int
+        this.jLabel1.setText("Pregunta " + num);
+        this.buttonGroup1.clearSelection();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton anterior;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JTextArea enunciado;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JRadioButton no;
-    private javax.swing.JTextArea pregunta;
     private javax.swing.JRadioButton si;
     private javax.swing.JButton siguiente;
     // End of variables declaration//GEN-END:variables
