@@ -192,3 +192,6 @@ public class Carreras extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea9;
     // End of variables declaration//GEN-END:variables
 }
+
+
+// comentario de prueba
