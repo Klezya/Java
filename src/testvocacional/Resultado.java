@@ -3,6 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package testvocacional;
+import java.util.Arrays;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import testvocacional.Lector;
 /**
  *
@@ -16,6 +22,8 @@ public class Resultado extends javax.swing.JFrame {
     public Resultado() {
         Lector.calcularResultados();
         initComponents();
+        JLabel[] labels = {primera, segunda, tercera, cuarta, quinta};
+        establecerLabels(labels);
     }
 
     /**
@@ -44,22 +52,47 @@ public class Resultado extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         primerboton.setText("carreras relacionadas");
+        primerboton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                primerbotonActionPerformed(evt);
+            }
+        });
         getContentPane().add(primerboton);
         primerboton.setBounds(221, 93, 155, 35);
 
         segundoboton.setText("carreras relacionadas");
+        segundoboton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                segundobotonActionPerformed(evt);
+            }
+        });
         getContentPane().add(segundoboton);
         segundoboton.setBounds(221, 134, 155, 35);
 
         tercerboton.setText("carreras relacionadas");
+        tercerboton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tercerbotonActionPerformed(evt);
+            }
+        });
         getContentPane().add(tercerboton);
         tercerboton.setBounds(221, 175, 155, 35);
 
         cuartoboton.setText("carreras relacionadas");
+        cuartoboton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cuartobotonActionPerformed(evt);
+            }
+        });
         getContentPane().add(cuartoboton);
         cuartoboton.setBounds(221, 216, 155, 35);
 
         quintoboton.setText("carreras relacionadas");
+        quintoboton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quintobotonActionPerformed(evt);
+            }
+        });
         getContentPane().add(quintoboton);
         quintoboton.setBounds(221, 257, 155, 35);
 
@@ -92,6 +125,51 @@ public class Resultado extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(416, 308));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void primerbotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_primerbotonActionPerformed
+        
+        int indice = Lector.areasOrdenadas[0];
+        String stringCarreras = Arrays.toString(Lector.areasYCarreras[indice]); 
+        JOptionPane.showMessageDialog(null,"Carreras relacionadas al area de "+ Lector.areasYCarreras[indice][0] + ": \n\n" + stringCarreras, "Carreras relacionadas",JOptionPane.INFORMATION_MESSAGE);
+
+
+    }//GEN-LAST:event_primerbotonActionPerformed
+
+    private void segundobotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_segundobotonActionPerformed
+        
+        int indice = Lector.areasOrdenadas[1];
+        String stringCarreras = Arrays.toString(Lector.areasYCarreras[indice]); 
+        JOptionPane.showMessageDialog(null,"Carreras relacionadas al area de "+ Lector.areasYCarreras[indice][0] + ": \n\n" + stringCarreras, "Carreras relacionadas",JOptionPane.INFORMATION_MESSAGE);
+
+
+    }//GEN-LAST:event_segundobotonActionPerformed
+
+    private void tercerbotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tercerbotonActionPerformed
+        
+        int indice = Lector.areasOrdenadas[2];
+        String stringCarreras = Arrays.toString(Lector.areasYCarreras[indice]); 
+        JOptionPane.showMessageDialog(null,"Carreras relacionadas al area de "+ Lector.areasYCarreras[indice][0] + ": \n\n" + stringCarreras, "Carreras relacionadas",JOptionPane.INFORMATION_MESSAGE);
+
+
+    }//GEN-LAST:event_tercerbotonActionPerformed
+
+    private void cuartobotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cuartobotonActionPerformed
+        
+        int indice = Lector.areasOrdenadas[3];
+        String stringCarreras = Arrays.toString(Lector.areasYCarreras[indice]); 
+        JOptionPane.showMessageDialog(null,"Carreras relacionadas al area de "+ Lector.areasYCarreras[indice][0] + ": \n\n" + stringCarreras, "Carreras relacionadas",JOptionPane.INFORMATION_MESSAGE);
+
+
+    }//GEN-LAST:event_cuartobotonActionPerformed
+
+    private void quintobotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quintobotonActionPerformed
+        
+        int indice = Lector.areasOrdenadas[4];
+        String stringCarreras = Arrays.toString(Lector.areasYCarreras[indice]); 
+        JOptionPane.showMessageDialog(null,"Carreras relacionadas al area de "+ Lector.areasYCarreras[indice][0] + ": \n\n" + stringCarreras, "Carreras relacionadas",JOptionPane.INFORMATION_MESSAGE);
+
+
+    }//GEN-LAST:event_quintobotonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -126,6 +204,16 @@ public class Resultado extends javax.swing.JFrame {
                 new Resultado().setVisible(true);
             }
         });
+    }
+
+    
+    public void establecerLabels(JLabel[] labels){
+        //Establecer nombre de las carreras
+        int k = 0;
+        for (int indice : Lector.areasOrdenadas) {
+            labels[k].setText(Lector.areasYCarreras[indice-1][0]);
+            k++;
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

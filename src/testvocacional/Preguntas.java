@@ -6,8 +6,6 @@ package testvocacional;
 
 
 import javax.swing.JOptionPane;
-import testvocacional.Lector;
-
 /**
  *
  * @author sweet
