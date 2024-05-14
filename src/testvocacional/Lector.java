@@ -2,6 +2,8 @@ package testvocacional;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class Lector {
@@ -103,26 +105,17 @@ public class Lector {
     }
 
     public static void calcularResultados() {
-        int[] aux = new int[cantAreas];
         for (int[] respuesta : controladorResultados) {
             if (respuesta[0] == 1) {
                 int numArea = respuesta[1]; //Obtenemos a que area corresponde la respuesta
-                aux[numArea-1] += 1; //Se le resta 1 porque los indices son del 0 al 4, y las areas del 1 al 5 
+                ordenCarreras[numArea-1] += 1; //Se le resta 1 porque los indices son del 0 al 4, y las areas del 1 al 5 
             }
         }
-        int mayor = 0;
-        for (int pos = 0; pos < cantAreas; pos++){
-            for (int i : aux) {
-                if (condition) {
-                    
-                }
-            }
-        }
-        
-        
 
-
-
-
+        //Este codigo ordena el arreglo aux de menor a mayor (de mayor a menor nose como se hace)
+        Arrays.sort(ordenCarreras); 
+        System.out.println(Arrays.toString(ordenCarreras));
     }
+
+    
 }
