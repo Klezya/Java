@@ -45,11 +45,14 @@ public class Resultado extends javax.swing.JFrame {
         tercera = new javax.swing.JLabel();
         cuarta = new javax.swing.JLabel();
         quinta = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         textores = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(215, 227, 255));
-        getContentPane().setLayout(null);
+        setMaximumSize(new java.awt.Dimension(600, 400));
+        setPreferredSize(new java.awt.Dimension(600, 300));
+        setResizable(false);
 
         primerboton.setText("carreras relacionadas");
         primerboton.addActionListener(new java.awt.event.ActionListener() {
@@ -57,8 +60,6 @@ public class Resultado extends javax.swing.JFrame {
                 primerbotonActionPerformed(evt);
             }
         });
-        getContentPane().add(primerboton);
-        primerboton.setBounds(221, 93, 155, 35);
 
         segundoboton.setText("carreras relacionadas");
         segundoboton.addActionListener(new java.awt.event.ActionListener() {
@@ -66,8 +67,6 @@ public class Resultado extends javax.swing.JFrame {
                 segundobotonActionPerformed(evt);
             }
         });
-        getContentPane().add(segundoboton);
-        segundoboton.setBounds(221, 134, 155, 35);
 
         tercerboton.setText("carreras relacionadas");
         tercerboton.addActionListener(new java.awt.event.ActionListener() {
@@ -75,8 +74,6 @@ public class Resultado extends javax.swing.JFrame {
                 tercerbotonActionPerformed(evt);
             }
         });
-        getContentPane().add(tercerboton);
-        tercerboton.setBounds(221, 175, 155, 35);
 
         cuartoboton.setText("carreras relacionadas");
         cuartoboton.addActionListener(new java.awt.event.ActionListener() {
@@ -84,8 +81,6 @@ public class Resultado extends javax.swing.JFrame {
                 cuartobotonActionPerformed(evt);
             }
         });
-        getContentPane().add(cuartoboton);
-        cuartoboton.setBounds(221, 216, 155, 35);
 
         quintoboton.setText("carreras relacionadas");
         quintoboton.addActionListener(new java.awt.event.ActionListener() {
@@ -93,36 +88,90 @@ public class Resultado extends javax.swing.JFrame {
                 quintobotonActionPerformed(evt);
             }
         });
-        getContentPane().add(quintoboton);
-        quintoboton.setBounds(221, 257, 155, 35);
 
+        primera.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         primera.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(primera);
-        primera.setBounds(49, 93, 116, 35);
 
+        segunda.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         segunda.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(segunda);
-        segunda.setBounds(49, 134, 116, 35);
 
+        tercera.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         tercera.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(tercera);
-        tercera.setBounds(49, 175, 116, 35);
 
+        cuarta.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         cuarta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(cuarta);
-        cuarta.setBounds(49, 216, 116, 35);
 
+        quinta.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         quinta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(quinta);
-        quinta.setBounds(49, 257, 116, 35);
 
         textores.setFont(new java.awt.Font("Segoe UI", 3, 22)); // NOI18N
         textores.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         textores.setText("LOS RESULTADOS  DE SU TEST SON...");
-        getContentPane().add(textores);
-        textores.setBounds(0, 40, 410, 30);
+        jPanel1.add(textores);
 
-        setSize(new java.awt.Dimension(416, 308));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(10, 10, 10))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cuarta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(quinta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cuartoboton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(quintoboton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(tercera, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                    .addComponent(segunda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(primera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(primerboton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(segundoboton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tercerboton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(20, 20, 20))))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(primerboton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(primera, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(segunda, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(segundoboton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tercerboton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tercera, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(cuarta, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15)
+                        .addComponent(quinta, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(cuartoboton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15)
+                        .addComponent(quintoboton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(140, Short.MAX_VALUE))
+        );
+
+        setSize(new java.awt.Dimension(791, 473));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -130,8 +179,8 @@ public class Resultado extends javax.swing.JFrame {
         
         int indice = Lector.areasOrdenadas[0];
         String stringCarreras = Arrays.toString(Lector.areasYCarreras[indice]); 
-        JOptionPane.showMessageDialog(null,"Carreras relacionadas al area de "+ Lector.areasYCarreras[indice][0] + ": \n\n" + stringCarreras, "Carreras relacionadas",JOptionPane.INFORMATION_MESSAGE);
-
+        //JOptionPane.showMessageDialog(null,"Carreras relacionadas al area de "+ Lector.areasYCarreras[indice][0] + ": \n\n" + stringCarreras, "Carreras relacionadas",JOptionPane.INFORMATION_MESSAGE);
+        new Carreras().setVisible(true);
 
     }//GEN-LAST:event_primerbotonActionPerformed
 
@@ -139,8 +188,8 @@ public class Resultado extends javax.swing.JFrame {
         
         int indice = Lector.areasOrdenadas[1];
         String stringCarreras = Arrays.toString(Lector.areasYCarreras[indice]); 
-        JOptionPane.showMessageDialog(null,"Carreras relacionadas al area de "+ Lector.areasYCarreras[indice][0] + ": \n\n" + stringCarreras, "Carreras relacionadas",JOptionPane.INFORMATION_MESSAGE);
-
+        //JOptionPane.showMessageDialog(null,"Carreras relacionadas al area de "+ Lector.areasYCarreras[indice][0] + ": \n\n" + stringCarreras, "Carreras relacionadas",JOptionPane.INFORMATION_MESSAGE);
+        new Carreras().setVisible(true);
 
     }//GEN-LAST:event_segundobotonActionPerformed
 
@@ -148,8 +197,8 @@ public class Resultado extends javax.swing.JFrame {
         
         int indice = Lector.areasOrdenadas[2];
         String stringCarreras = Arrays.toString(Lector.areasYCarreras[indice]); 
-        JOptionPane.showMessageDialog(null,"Carreras relacionadas al area de "+ Lector.areasYCarreras[indice][0] + ": \n\n" + stringCarreras, "Carreras relacionadas",JOptionPane.INFORMATION_MESSAGE);
-
+        //JOptionPane.showMessageDialog(null,"Carreras relacionadas al area de "+ Lector.areasYCarreras[indice][0] + ": \n\n" + stringCarreras, "Carreras relacionadas",JOptionPane.INFORMATION_MESSAGE);
+        new Carreras().setVisible(true);
 
     }//GEN-LAST:event_tercerbotonActionPerformed
 
@@ -157,8 +206,8 @@ public class Resultado extends javax.swing.JFrame {
         
         int indice = Lector.areasOrdenadas[3];
         String stringCarreras = Arrays.toString(Lector.areasYCarreras[indice]); 
-        JOptionPane.showMessageDialog(null,"Carreras relacionadas al area de "+ Lector.areasYCarreras[indice][0] + ": \n\n" + stringCarreras, "Carreras relacionadas",JOptionPane.INFORMATION_MESSAGE);
-
+        //JOptionPane.showMessageDialog(null,"Carreras relacionadas al area de "+ Lector.areasYCarreras[indice][0] + ": \n\n" + stringCarreras, "Carreras relacionadas",JOptionPane.INFORMATION_MESSAGE);
+        new Carreras().setVisible(true);
 
     }//GEN-LAST:event_cuartobotonActionPerformed
 
@@ -166,8 +215,9 @@ public class Resultado extends javax.swing.JFrame {
         
         int indice = Lector.areasOrdenadas[4];
         String stringCarreras = Arrays.toString(Lector.areasYCarreras[indice]); 
-        JOptionPane.showMessageDialog(null,"Carreras relacionadas al area de "+ Lector.areasYCarreras[indice][0] + ": \n\n" + stringCarreras, "Carreras relacionadas",JOptionPane.INFORMATION_MESSAGE);
-
+        //JOptionPane.showMessageDialog(null,"Carreras relacionadas al area de "+ Lector.areasYCarreras[indice][0] + ": \n\n" + stringCarreras, "Carreras relacionadas",JOptionPane.INFORMATION_MESSAGE);
+        
+        new Carreras().setVisible(true);
 
     }//GEN-LAST:event_quintobotonActionPerformed
 
@@ -219,6 +269,7 @@ public class Resultado extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel cuarta;
     private javax.swing.JButton cuartoboton;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel primera;
     private javax.swing.JButton primerboton;
     private javax.swing.JLabel quinta;
