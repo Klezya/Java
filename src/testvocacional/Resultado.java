@@ -28,7 +28,6 @@ public class Resultado extends javax.swing.JFrame {
     private void initComponents() {
 
         primerboton = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         segundoboton = new javax.swing.JButton();
         tercerboton = new javax.swing.JButton();
         cuartoboton = new javax.swing.JButton();
@@ -47,10 +46,6 @@ public class Resultado extends javax.swing.JFrame {
         primerboton.setText("carreras relacionadas");
         getContentPane().add(primerboton);
         primerboton.setBounds(221, 93, 155, 35);
-
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(6, 113, 0, 35);
 
         segundoboton.setText("carreras relacionadas");
         getContentPane().add(segundoboton);
@@ -136,7 +131,6 @@ public class Resultado extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel cuarta;
     private javax.swing.JButton cuartoboton;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel primera;
     private javax.swing.JButton primerboton;
     private javax.swing.JLabel quinta;

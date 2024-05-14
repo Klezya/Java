@@ -133,7 +133,7 @@ public class Preguntas extends javax.swing.JFrame {
         if (buttonGroup1.getSelection() == null) { //si no selecciona opcion dar advertencia
             JOptionPane.showMessageDialog(null,"Porfavor seleccionar una de las opciones antes de continuar", "Advertencia",JOptionPane.ERROR_MESSAGE);
         } else {
-            if (Lector.numPregunta == (Lector.cantidadPreguntas(Lector.rutaArchivo) - 1)) {//Compara si la pregunta es la ultima
+            if (Lector.numPregunta == (Lector.cantidadPreguntas(Lector.rutaArchivo) - 1)) { //Compara si la pregunta es la ultima
                 new Resultado().setVisible(true);
                 int seleccion = Integer.parseInt(buttonGroup1.getSelection().getActionCommand()); //El valor de seleccion sera 0 si NO y 1 si SI
                 Lector.controladorResultados[Lector.numPregunta][0] = seleccion;

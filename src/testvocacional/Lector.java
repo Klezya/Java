@@ -3,7 +3,6 @@ package testvocacional;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.Scanner;
 
 public class Lector {
@@ -13,8 +12,11 @@ public class Lector {
     public static int[][] controladorResultados = null;
     public static String[] preguntas = null;
     public static int numPregunta = 0;
-    public static int[] ordenCarreras = null;
     public static int cantAreas = 0;
+    public static int[] areasOrdenadas = null;
+
+    private static int[] puntajeCarreras = null;
+    
 
     public Lector() {
         iniciarLector();
@@ -30,7 +32,8 @@ public class Lector {
             String aux = scanner.nextLine(); //Leemos cuantas areas existes
             cantAreas = Integer.parseInt(aux); //Definimos las areas en una variable
 
-            ordenCarreras = new int[cantAreas]; //Matriz que tendra los resultados de las carreras ordenados de mayor a menos (para entregar resultados)
+            areasOrdenadas = new int[cantAreas]; //Arreglo con el orden de las areas de mayor a menor
+            puntajeCarreras = new int[cantAreas]; //Carreras ordenadas ordenCarreras[cantAreas(indice)] [0=puntaje,1=area(1 a 5)]
             areasYCarreras = new String[cantAreas][]; //Matriz de carreras por area
 
             //Guardamos en un arreglo las areas junto a sus carreras, siendo el valor 0 el Area y el resto las carreras
@@ -108,14 +111,38 @@ public class Lector {
         for (int[] respuesta : controladorResultados) {
             if (respuesta[0] == 1) {
                 int numArea = respuesta[1]; //Obtenemos a que area corresponde la respuesta
-                ordenCarreras[numArea-1] += 1; //Se le resta 1 porque los indices son del 0 al 4, y las areas del 1 al 5 
+                puntajeCarreras[numArea-1] += 1; //Sumar los puntos de cada area, el indice es el Area-1
             }
         }
+        //No cuestionar, funciona y ordena las areas en el arreglo de mayor a menor puntaje :D
+        int mayor = 0;
+        int indice = 0;
+        int count = 0;
+        while (count < cantAreas) {
+            for (int i = 0; i < cantAreas; i++) {
+                if (puntajeCarreras[i] > mayor) {
+                    mayor = puntajeCarreras[i];
+                }
+            }
+            indice = indexOf(puntajeCarreras, mayor);
+            puntajeCarreras[indice] = -1;
+            areasOrdenadas[count] = indice + 1;
 
-        //Este codigo ordena el arreglo aux de menor a mayor (de mayor a menor nose como se hace)
-        Arrays.sort(ordenCarreras); 
-        System.out.println(Arrays.toString(ordenCarreras));
+            mayor = 0;
+            indice = 0;
+            count++;
+        } 
     }
+
+    private static int indexOf(int[] array, int target) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == target) {
+                return i; // Index of the target value
+            }
+        }
+        return -1; // Target value not found
+    }
+    
 
     
 }
