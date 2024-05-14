@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package testvocacional;
-
+import testvocacional.Lector;
 /**
  *
  * @author sweet
@@ -14,6 +14,7 @@ public class Resultado extends javax.swing.JFrame {
      * Creates new form Resultado
      */
     public Resultado() {
+        Lector.calcularResultados();
         initComponents();
     }
 

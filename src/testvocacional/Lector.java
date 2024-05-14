@@ -6,10 +6,13 @@ import java.util.Scanner;
 
 public class Lector {
 
+    public static String rutaArchivo = "src\\resource\\config.txt";
     public static String[][] areasYCarreras = null;
     public static int[][] controladorResultados = null;
     public static String[] preguntas = null;
     public static int numPregunta = 0;
+    public static int[] ordenCarreras = null;
+    public static int cantAreas = 0;
 
     public Lector() {
         iniciarLector();
@@ -18,18 +21,18 @@ public class Lector {
     public static void iniciarLector() {
         try {
             //Abrir el archivo con las preguntas
-            String rutaArchivo = "src\\resource\\config.txt";
             File archivo = new File(rutaArchivo);
 
             //Crear un scanner para leer el archivo
             Scanner scanner = new Scanner(archivo);
-            String cantAreas = scanner.nextLine();
-            int i = Integer.parseInt(cantAreas);
+            String aux = scanner.nextLine(); //Leemos cuantas areas existes
+            cantAreas = Integer.parseInt(aux); //Definimos las areas en una variable
 
-            areasYCarreras = new String[i][]; //Matriz de carreras por area
+            ordenCarreras = new int[cantAreas]; //Matriz que tendra los resultados de las carreras ordenados de mayor a menos (para entregar resultados)
+            areasYCarreras = new String[cantAreas][]; //Matriz de carreras por area
 
             //Guardamos en un arreglo las areas junto a sus carreras, siendo el valor 0 el Area y el resto las carreras
-            for (int j = 0; j<i ; j++ ) {
+            for (int j = 0; j<cantAreas ; j++ ) {
                 if (scanner.hasNextLine()){
                     String lin = scanner.nextLine();
 
@@ -48,7 +51,7 @@ public class Lector {
             
             //Manejamos el arreglo de las respuestas 
             int cantPreguntas = cantidadPreguntas(rutaArchivo);
-            controladorResultados = new int[2][cantPreguntas]; //Arreglo de los resultados controladorResultados[0=Respuestas(1 o 0),1=AreaCorrespondiente(1 - 5)] [NumPregunta -1]
+            controladorResultados = new int[cantPreguntas][2]; //Arreglo de los resultados controladorResultados[NumPregunta -1] [0=Respuestas(1 o 0),1=AreaCorrespondiente(1 - 5)]
             preguntas = new String[cantPreguntas];
             int count = 0;
 
@@ -58,10 +61,10 @@ public class Lector {
                 if (linea.isEmpty()) {
                     continue;
                 } else {
-                    elementos[2] = elementos[2].replaceAll("\\s",""); //Eliminar espacios vacios para transformar a INT
-                    controladorResultados[1][count] = Integer.parseInt(elementos[2]);
-                    preguntas[count] = elementos[1];
-                    count++;
+                    elementos[2] = elementos[2].replaceAll("\\s",""); //Eliminar espacios vacios para transformar a INT el valor del area
+                    controladorResultados[count][1] = Integer.parseInt(elementos[2]); //Definimos que areas estan relacionadas a que resultados
+                    preguntas[count] = elementos[1]; //Guardamos la pregunta ("String") en el arreglo preguntas
+                    count++; //Seguimos
                 }
             }
 
@@ -97,5 +100,29 @@ public class Lector {
             System.out.println("Error: " + e.getMessage());
             return 0;
         }
+    }
+
+    public static void calcularResultados() {
+        int[] aux = new int[cantAreas];
+        for (int[] respuesta : controladorResultados) {
+            if (respuesta[0] == 1) {
+                int numArea = respuesta[1]; //Obtenemos a que area corresponde la respuesta
+                aux[numArea-1] += 1; //Se le resta 1 porque los indices son del 0 al 4, y las areas del 1 al 5 
+            }
+        }
+        int mayor = 0;
+        for (int pos = 0; pos < cantAreas; pos++){
+            for (int i : aux) {
+                if (condition) {
+                    
+                }
+            }
+        }
+        
+        
+
+
+
+
     }
 }

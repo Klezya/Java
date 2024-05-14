@@ -6,7 +6,7 @@ package testvocacional;
 
 
 import javax.swing.JOptionPane;
-
+import testvocacional.Lector;
 
 /**
  *
@@ -129,13 +129,22 @@ public class Preguntas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void siguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siguienteActionPerformed
-        if (buttonGroup1.getSelection() == null) {//si no selecciona opcion dar advertencia
+        
+        if (buttonGroup1.getSelection() == null) { //si no selecciona opcion dar advertencia
             JOptionPane.showMessageDialog(null,"Porfavor seleccionar una de las opciones antes de continuar", "Advertencia",JOptionPane.ERROR_MESSAGE);
         } else {
-            int seleccion = Integer.parseInt(buttonGroup1.getSelection().getActionCommand()); //El valor de seleccion sera 0 si NO y 1 si SI
-            Lector.controladorResultados[0][Lector.numPregunta] = seleccion;
-            Lector.numPregunta++;
-            refrescar();
+            if (Lector.numPregunta == (Lector.cantidadPreguntas(Lector.rutaArchivo) - 1)) {//Compara si la pregunta es la ultima
+                new Resultado().setVisible(true);
+                int seleccion = Integer.parseInt(buttonGroup1.getSelection().getActionCommand()); //El valor de seleccion sera 0 si NO y 1 si SI
+                Lector.controladorResultados[Lector.numPregunta][0] = seleccion;
+                Lector.numPregunta++;
+                this.dispose();
+            } else {
+                int seleccion = Integer.parseInt(buttonGroup1.getSelection().getActionCommand()); //El valor de seleccion sera 0 si NO y 1 si SI
+                Lector.controladorResultados[Lector.numPregunta][0] = seleccion;
+                Lector.numPregunta++;
+                refrescar();
+            }
         }
     }//GEN-LAST:event_siguienteActionPerformed
 
@@ -189,6 +198,11 @@ public class Preguntas extends javax.swing.JFrame {
         int num = Lector.numPregunta + 1; //esto es simplemente porque si los sumo se suman como String a pesar de ser int
         this.jLabel1.setText("Pregunta " + num);
         this.buttonGroup1.clearSelection();
+        if (num == Lector.cantidadPreguntas(Lector.rutaArchivo)) {
+            this.siguiente.setText("Finalizar Test");
+        } else {
+            this.siguiente.setText("Siguiente");
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
