@@ -15,7 +15,10 @@ public class Preguntas extends javax.swing.JFrame {
      */
     public Preguntas() {
         initComponents();
-
+        //te odio java, que suma int como si fueran strings
+        int num = Lector.numPregunta + 1; //esto es simplemente porque si los sumo se suman como String a pesar de ser int
+        this.jLabel1.setText("Pregunta " + num + "/" + Lector.cantPreguntas);
+        //logo
         ImageIcon icono = new ImageIcon("src/resource/logo.png");
         this.setIconImage(icono.getImage());
     }
@@ -203,7 +206,6 @@ public class Preguntas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void siguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siguienteActionPerformed
-        
         if (buttonGroup1.getSelection() == null) { //si no selecciona opcion dar advertencia
             JOptionPane.showMessageDialog(null,"Porfavor seleccionar una de las opciones antes de continuar", "Advertencia",JOptionPane.ERROR_MESSAGE);
         } else {
@@ -218,16 +220,41 @@ public class Preguntas extends javax.swing.JFrame {
                 Lector.controladorResultados[Lector.numPregunta][0] = seleccion;
                 Lector.numPregunta++;
                 refrescar();
+                //Para que permanezca seleccionado el boton
+                int respuesta = Lector.controladorResultados[Lector.numPregunta][0];
+                switch (respuesta) {
+                    case 0:
+                        no.setSelected(true);
+                        break;
+                    case 1:
+                        si.setSelected(true);
+                        break;
+                    default:
+                        break;
+                }
             }
         }
     }//GEN-LAST:event_siguienteActionPerformed
 
     private void anteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anteriorActionPerformed
+        
         if (Lector.numPregunta == 0) {
             JOptionPane.showMessageDialog(null, "Estas en la primera pregunta, no puedes retroceder mas","Advertencia",JOptionPane.ERROR_MESSAGE);
         } else {
             Lector.numPregunta--;
             refrescar();
+            //Mantener seleccionado boton
+            int respuesta = Lector.controladorResultados[Lector.numPregunta][0];
+            switch (respuesta) {
+                case 0:
+                    no.setSelected(true);
+                    break;
+                case 1:
+                    si.setSelected(true);
+                    break;
+                default:
+                    break;
+            }
         }
     }//GEN-LAST:event_anteriorActionPerformed
 
@@ -270,7 +297,7 @@ public class Preguntas extends javax.swing.JFrame {
         this.enunciado.setText(Lector.preguntas[Lector.numPregunta]);
         this.enunciado.setLineWrap(true);
         int num = Lector.numPregunta + 1; //esto es simplemente porque si los sumo se suman como String a pesar de ser int
-        this.jLabel1.setText("Pregunta " + num);
+        this.jLabel1.setText("Pregunta " + num + "/" + Lector.cantPreguntas);
         this.buttonGroup1.clearSelection();
         if (num == Lector.cantidadPreguntas(Lector.rutaArchivo)) {
             this.siguiente.setText("Finalizar Test");

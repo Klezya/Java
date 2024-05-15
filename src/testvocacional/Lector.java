@@ -4,6 +4,13 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+
+/** La logica estaba brigida
+ *
+ * @author Klezya :D
+ * 
+ */
+
 public class Lector {
 
     public static String rutaArchivo = "src\\resource\\config.txt";
@@ -13,7 +20,7 @@ public class Lector {
     public static int numPregunta = 0;
     public static int cantAreas = 0;
     public static int[] areasOrdenadas = null;
-
+    public static int cantPreguntas = 0;
     private static int[] puntajeCarreras = null;
     
 
@@ -54,8 +61,13 @@ public class Lector {
             }
             
             //Manejamos el arreglo de las respuestas 
-            int cantPreguntas = cantidadPreguntas(rutaArchivo);
+            cantPreguntas = cantidadPreguntas(rutaArchivo);
             controladorResultados = new int[cantPreguntas][2]; //Arreglo de los resultados controladorResultados[NumPregunta -1] [0=Respuestas(1 o 0),1=AreaCorrespondiente(1 - 5)]
+            //llenamos las respuestas de -1 para saber cuales estan sin contestar
+            for (int elm = 0; elm < cantPreguntas; elm++) {
+                controladorResultados[elm][0] = -1;
+            }
+            
             preguntas = new String[cantPreguntas];
             int count = 0;
 
