@@ -52,35 +52,35 @@ public class Resultado extends javax.swing.JFrame {
         setBackground(new java.awt.Color(215, 227, 255));
         setResizable(false);
 
-        primerboton.setText("carreras relacionadas");
+        primerboton.setText("Profesiones del area");
         primerboton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 primerbotonActionPerformed(evt);
             }
         });
 
-        segundoboton.setText("carreras relacionadas");
+        segundoboton.setText("Profesiones del area");
         segundoboton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 segundobotonActionPerformed(evt);
             }
         });
 
-        tercerboton.setText("carreras relacionadas");
+        tercerboton.setText("Profesiones del area");
         tercerboton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tercerbotonActionPerformed(evt);
             }
         });
 
-        cuartoboton.setText("carreras relacionadas");
+        cuartoboton.setText("Profesiones del area");
         cuartoboton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cuartobotonActionPerformed(evt);
             }
         });
 
-        quintoboton.setText("carreras relacionadas");
+        quintoboton.setText("Profesiones del area");
         quintoboton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 quintobotonActionPerformed(evt);

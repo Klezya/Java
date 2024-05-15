@@ -110,7 +110,7 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="primerboton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="carreras relacionadas"/>
+        <Property name="text" type="java.lang.String" value="Profesiones del area"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="primerbotonActionPerformed"/>
@@ -118,7 +118,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="segundoboton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="carreras relacionadas"/>
+        <Property name="text" type="java.lang.String" value="Profesiones del area"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="segundobotonActionPerformed"/>
@@ -126,7 +126,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="tercerboton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="carreras relacionadas"/>
+        <Property name="text" type="java.lang.String" value="Profesiones del area"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tercerbotonActionPerformed"/>
@@ -134,7 +134,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="cuartoboton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="carreras relacionadas"/>
+        <Property name="text" type="java.lang.String" value="Profesiones del area"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cuartobotonActionPerformed"/>
@@ -142,7 +142,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="quintoboton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="carreras relacionadas"/>
+        <Property name="text" type="java.lang.String" value="Profesiones del area"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="quintobotonActionPerformed"/>
