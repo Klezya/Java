@@ -13,8 +13,9 @@ public class Carreras extends javax.swing.JFrame {
     /**
      * Creates new form Carreras
      */
-    public Carreras() {
+    public Carreras(String[] arrayCarreras, String nombreArea) {
         initComponents();
+        establecerCarreras(arrayCarreras, nombreArea);
     }
 
     /**
@@ -27,10 +28,10 @@ public class Carreras extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        areaLabel = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea9 = new javax.swing.JTextArea();
+        carrerasScrollPane = new javax.swing.JScrollPane();
+        carrerasTextArea = new javax.swing.JTextArea();
         jPanel3 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
 
@@ -39,8 +40,8 @@ public class Carreras extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel1.setText("jLabel1");
+        areaLabel.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        areaLabel.setText("jLabel1");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -48,25 +49,25 @@ public class Carreras extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addComponent(areaLabel)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(44, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addComponent(areaLabel)
                 .addGap(40, 40, 40))
         );
 
         jPanel2.setDoubleBuffered(false);
 
-        jTextArea9.setEditable(false);
-        jTextArea9.setBackground(new java.awt.Color(255, 255, 255));
-        jTextArea9.setColumns(20);
-        jTextArea9.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextArea9.setRows(5);
-        jScrollPane1.setViewportView(jTextArea9);
+        carrerasTextArea.setEditable(false);
+        carrerasTextArea.setBackground(new java.awt.Color(255, 255, 255));
+        carrerasTextArea.setColumns(20);
+        carrerasTextArea.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        carrerasTextArea.setRows(5);
+        carrerasScrollPane.setViewportView(carrerasTextArea);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -76,7 +77,7 @@ public class Carreras extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 819, Short.MAX_VALUE)
+                    .addComponent(carrerasScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 819, Short.MAX_VALUE)
                     .addContainerGap()))
         );
         jPanel2Layout.setVerticalGroup(
@@ -85,7 +86,7 @@ public class Carreras extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(7, 7, 7)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
+                    .addComponent(carrerasScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
                     .addGap(7, 7, 7)))
         );
 
@@ -174,22 +175,35 @@ public class Carreras extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form */
+        /* Create and display the form *
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Carreras().setVisible(true);
             }
-        });
+        });*/
     }
 
+    private void establecerCarreras(String[] arrayCarreras, String nombreArea){
+        this.areaLabel.setText(nombreArea);
+        //Funcion para dejar las carreras bonitas en el recuadro
+        StringBuilder sb = new StringBuilder();
+        for (String element : arrayCarreras) {
+            sb.append(element).append("\n");
+        }
+        String carreras = sb.toString();
+
+        this.carrerasTextArea.setText(carreras);
+    }
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel areaLabel;
+    private javax.swing.JScrollPane carrerasScrollPane;
+    private javax.swing.JTextArea carrerasTextArea;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea9;
     // End of variables declaration//GEN-END:variables
 }
 

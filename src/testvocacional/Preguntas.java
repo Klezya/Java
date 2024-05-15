@@ -40,7 +40,6 @@ public class Preguntas extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(600, 400));
-        setPreferredSize(new java.awt.Dimension(600, 400));
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -101,11 +100,6 @@ public class Preguntas extends javax.swing.JFrame {
         no.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         no.setText("No me interesa");
         no.setActionCommand("0");
-        no.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                noActionPerformed(evt);
-            }
-        });
 
         buttonGroup1.add(si);
         si.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -113,11 +107,6 @@ public class Preguntas extends javax.swing.JFrame {
         si.setActionCommand("1");
         si.setMaximumSize(new java.awt.Dimension(130, 30));
         si.setMinimumSize(new java.awt.Dimension(130, 30));
-        si.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                siActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -237,14 +226,6 @@ public class Preguntas extends javax.swing.JFrame {
             refrescar();
         }
     }//GEN-LAST:event_anteriorActionPerformed
-
-    private void siActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_siActionPerformed
-
-    private void noActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_noActionPerformed
 
     /**
      * @param args the command line arguments

@@ -14,6 +14,7 @@ public class TestVocacional {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
         new Lector();
         new Instrucciones().setVisible(true);
 

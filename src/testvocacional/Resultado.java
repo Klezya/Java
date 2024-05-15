@@ -178,46 +178,50 @@ public class Resultado extends javax.swing.JFrame {
     private void primerbotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_primerbotonActionPerformed
         
         int indice = Lector.areasOrdenadas[0];
-        String stringCarreras = Arrays.toString(Lector.areasYCarreras[indice]); 
-        //JOptionPane.showMessageDialog(null,"Carreras relacionadas al area de "+ Lector.areasYCarreras[indice][0] + ": \n\n" + stringCarreras, "Carreras relacionadas",JOptionPane.INFORMATION_MESSAGE);
-        new Carreras().setVisible(true);
+        String nombreArea = Lector.areasYCarreras[indice][0];
+        Lector.areasYCarreras[indice][0] = "";
+        String[] arrayCarreras = Lector.areasYCarreras[indice]; 
+        new Carreras(arrayCarreras, nombreArea).setVisible(true);
 
     }//GEN-LAST:event_primerbotonActionPerformed
 
     private void segundobotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_segundobotonActionPerformed
         
         int indice = Lector.areasOrdenadas[1];
-        String stringCarreras = Arrays.toString(Lector.areasYCarreras[indice]); 
-        //JOptionPane.showMessageDialog(null,"Carreras relacionadas al area de "+ Lector.areasYCarreras[indice][0] + ": \n\n" + stringCarreras, "Carreras relacionadas",JOptionPane.INFORMATION_MESSAGE);
-        new Carreras().setVisible(true);
+        String nombreArea = Lector.areasYCarreras[indice][0];
+        Lector.areasYCarreras[indice][0] = "";
+        String[] arrayCarreras = Lector.areasYCarreras[indice]; 
+        new Carreras(arrayCarreras, nombreArea).setVisible(true);
 
     }//GEN-LAST:event_segundobotonActionPerformed
 
     private void tercerbotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tercerbotonActionPerformed
         
         int indice = Lector.areasOrdenadas[2];
-        String stringCarreras = Arrays.toString(Lector.areasYCarreras[indice]); 
-        //JOptionPane.showMessageDialog(null,"Carreras relacionadas al area de "+ Lector.areasYCarreras[indice][0] + ": \n\n" + stringCarreras, "Carreras relacionadas",JOptionPane.INFORMATION_MESSAGE);
-        new Carreras().setVisible(true);
+        String nombreArea = Lector.areasYCarreras[indice][0];
+        Lector.areasYCarreras[indice][0] = "";
+        String[] arrayCarreras = Lector.areasYCarreras[indice]; 
+        new Carreras(arrayCarreras, nombreArea).setVisible(true);
 
     }//GEN-LAST:event_tercerbotonActionPerformed
 
     private void cuartobotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cuartobotonActionPerformed
         
         int indice = Lector.areasOrdenadas[3];
-        String stringCarreras = Arrays.toString(Lector.areasYCarreras[indice]); 
-        //JOptionPane.showMessageDialog(null,"Carreras relacionadas al area de "+ Lector.areasYCarreras[indice][0] + ": \n\n" + stringCarreras, "Carreras relacionadas",JOptionPane.INFORMATION_MESSAGE);
-        new Carreras().setVisible(true);
+        String nombreArea = Lector.areasYCarreras[indice][0];
+        Lector.areasYCarreras[indice][0] = "";
+        String[] arrayCarreras = Lector.areasYCarreras[indice]; 
+        new Carreras(arrayCarreras, nombreArea).setVisible(true);
 
     }//GEN-LAST:event_cuartobotonActionPerformed
 
     private void quintobotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quintobotonActionPerformed
         
         int indice = Lector.areasOrdenadas[4];
-        String stringCarreras = Arrays.toString(Lector.areasYCarreras[indice]); 
-        //JOptionPane.showMessageDialog(null,"Carreras relacionadas al area de "+ Lector.areasYCarreras[indice][0] + ": \n\n" + stringCarreras, "Carreras relacionadas",JOptionPane.INFORMATION_MESSAGE);
-        
-        new Carreras().setVisible(true);
+        String nombreArea = Lector.areasYCarreras[indice][0];
+        Lector.areasYCarreras[indice][0] = "";
+        String[] arrayCarreras = Lector.areasYCarreras[indice]; 
+        new Carreras(arrayCarreras, nombreArea).setVisible(true);
 
     }//GEN-LAST:event_quintobotonActionPerformed
 
