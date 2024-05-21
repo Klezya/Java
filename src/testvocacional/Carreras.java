@@ -194,7 +194,11 @@ public class Carreras extends javax.swing.JFrame {
         //Funcion para dejar las carreras bonitas en el recuadro
         StringBuilder sb = new StringBuilder();
         for (String element : arrayCarreras) {
-            sb.append(element).append("\n");
+            if (element == nombreArea) {
+                continue;
+            } else {
+                sb.append(element).append("\n");
+            }
         }
         String carreras = sb.toString();
 

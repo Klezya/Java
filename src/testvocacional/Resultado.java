@@ -177,7 +177,6 @@ public class Resultado extends javax.swing.JFrame {
         
         int indice = Lector.areasOrdenadas[0] -1;
         String nombreArea = Lector.areasYCarreras[indice][0];
-        Lector.areasYCarreras[indice][0] = "";
         String[] arrayCarreras = Lector.areasYCarreras[indice]; 
         new Carreras(arrayCarreras, nombreArea).setVisible(true);
 
@@ -187,7 +186,6 @@ public class Resultado extends javax.swing.JFrame {
         
         int indice = Lector.areasOrdenadas[1] -1;
         String nombreArea = Lector.areasYCarreras[indice][0];
-        Lector.areasYCarreras[indice][0] = "";
         String[] arrayCarreras = Lector.areasYCarreras[indice]; 
         new Carreras(arrayCarreras, nombreArea).setVisible(true);
 
@@ -197,7 +195,6 @@ public class Resultado extends javax.swing.JFrame {
         
         int indice = Lector.areasOrdenadas[2] -1;
         String nombreArea = Lector.areasYCarreras[indice][0];
-        Lector.areasYCarreras[indice][0] = "";
         String[] arrayCarreras = Lector.areasYCarreras[indice]; 
         new Carreras(arrayCarreras, nombreArea).setVisible(true);
 
@@ -207,7 +204,6 @@ public class Resultado extends javax.swing.JFrame {
         
         int indice = Lector.areasOrdenadas[3] -1;
         String nombreArea = Lector.areasYCarreras[indice][0];
-        Lector.areasYCarreras[indice][0] = "";
         String[] arrayCarreras = Lector.areasYCarreras[indice]; 
         new Carreras(arrayCarreras, nombreArea).setVisible(true);
 
@@ -217,7 +213,6 @@ public class Resultado extends javax.swing.JFrame {
         
         int indice = Lector.areasOrdenadas[4] -1;
         String nombreArea = Lector.areasYCarreras[indice][0];
-        Lector.areasYCarreras[indice][0] = "";
         String[] arrayCarreras = Lector.areasYCarreras[indice]; 
         new Carreras(arrayCarreras, nombreArea).setVisible(true);
 
