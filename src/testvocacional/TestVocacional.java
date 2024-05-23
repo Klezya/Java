@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package testvocacional;
-
 /**
  *
  * @author sweet
@@ -14,7 +13,12 @@ public class TestVocacional {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-    }
-    
+
+        new Lector();
+        new Instrucciones().setVisible(true);
+
+    }    
 }
+
+
+// comentario de prueba
